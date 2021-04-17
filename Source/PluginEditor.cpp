@@ -117,9 +117,11 @@ void AntagonizerAudioProcessorEditor::paint (juce::Graphics& g)
     g.setColour (juce::Colours::white);
     g.setFont (15.0f);
     
-//        g.drawText("Dry / Wet", ((getWidth() / 6.3) * 1) - (50), (getHeight() / 2) - 15, 100, 100, Justification::centred, false);
-//        g.drawText("Feedback", ((getWidth() / 4) * 2) - (50), (getHeight() / 2) - 15, 100, 100, Justification::centred, false);
-//        g.drawText("Time", ((getWidth() / 3.6) * 3) - (50), (getHeight() / 2) - 15, 100, 100, Justification::centred, false);
+    g.drawText("Dry / Wet", 0, 25, 100, 100, Justification::centred, false);
+    g.drawText("Feedback", 100, 25, 100, 100, Justification::centred, false);
+    g.drawText("Rate", 200, 25, 100, 100, Justification::centred, false);
+    g.drawText("Depth", 0, 150, 100, 100, Justification::centred, false);
+    g.drawText("Antagonizer", 200, 150, 100, 100, Justification::centred, false);
 }
 
 void AntagonizerAudioProcessorEditor::resized()
