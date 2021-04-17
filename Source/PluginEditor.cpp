@@ -93,6 +93,8 @@ AntagonizerAudioProcessorEditor::AntagonizerAudioProcessorEditor (AntagonizerAud
 
     mTypeBox.addItem("Thing 1", 1);
     mTypeBox.addItem("Thing 2", 2);
+    mTypeBox.addItem("Thing 3", 3);
+    mTypeBox.addItem("Thing 4", 4);
     mTypeBox.setSelectedItemIndex(*typeParameter);
     
     addAndMakeVisible(mTypeBox);
