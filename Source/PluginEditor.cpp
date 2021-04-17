@@ -5,7 +5,7 @@
 AntagonizerAudioProcessorEditor::AntagonizerAudioProcessorEditor (AntagonizerAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p)
 {
-    setSize (400, 300);
+    setSize (325, 250);
     
     auto& params = processor.getParameters();
     
@@ -126,8 +126,8 @@ void AntagonizerAudioProcessorEditor::resized()
 {
     mDryWetSlider.setBounds(0, 0, 100, 100);
     mFeedbackSlider.setBounds(100, 0, 100, 100);
-    mDepthSlider.setBounds(0, 100, 100, 100);
+    mDepthSlider.setBounds(0, 125, 100, 100);
     mRateSlider.setBounds(200, 0, 100, 100);
-    mPhaseOffsetSlider.setBounds(200, 100, 100, 100);
-    mTypeBox.setBounds(100, 125, 100, 50);
+    mPhaseOffsetSlider.setBounds(200, 125, 100, 100);
+    mTypeBox.setBounds(100, 150, 100, 50);
 }
