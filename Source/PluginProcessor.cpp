@@ -22,7 +22,7 @@ AntagonizerAudioProcessor::AntagonizerAudioProcessor()
     
     addParameter(mRateParameter = new AudioParameterFloat("rate", "Rate", 0.1f, 20.f, 10.f));
     
-    addParameter(mPhaseOffsetParameter = new AudioParameterFloat("phaseoffset", "Antagonizer", 0.f, 1.f, 0.5f));
+    addParameter(mPhaseOffsetParameter = new AudioParameterFloat("phaseoffset", "Antagonize", 0.f, 1.f, 0.5f));
     
     addParameter(mTypeParameter = new AudioParameterInt("type", "Type", 0, 3, 0));
      
