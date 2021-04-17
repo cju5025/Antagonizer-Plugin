@@ -121,7 +121,7 @@ void AntagonizerAudioProcessorEditor::paint (juce::Graphics& g)
     g.drawText("Feedback", 100, 25, 100, 100, Justification::centred, false);
     g.drawText("Rate", 200, 25, 100, 100, Justification::centred, false);
     g.drawText("Depth", 0, 150, 100, 100, Justification::centred, false);
-    g.drawText("Antagonizer", 200, 150, 100, 100, Justification::centred, false);
+    g.drawText("Antagonize", 200, 150, 100, 100, Justification::centred, false);
 }
 
 void AntagonizerAudioProcessorEditor::resized()
