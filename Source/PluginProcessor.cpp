@@ -263,8 +263,12 @@ void AntagonizerAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, 
                     readHeadRight_x1 -= mCircularBufferLength;
                 }
                 
-                float delaySampleLeft = linearInterpolation(mCircularBufferLeft[readHeadLeft_x], mCircularBufferLeft[readHeadLeft_x1], readHeadFloatLeft);
-                float delaySampleRight = linearInterpolation(mCircularBufferRight[readHeadRight_x], mCircularBufferRight[readHeadRight_x1], readHeadFloatRight);
+                float delaySampleLeft = linearInterpolation(mCircularBufferLeft[readHeadLeft_x],
+                                                            mCircularBufferLeft[readHeadLeft_x1],
+                                                            readHeadFloatLeft);
+                float delaySampleRight = linearInterpolation(mCircularBufferRight[readHeadRight_x],
+                                                             mCircularBufferRight[readHeadRight_x1],
+                                                             readHeadFloatRight);
                 
                 mFeedbackLeft = delaySampleLeft * *mFeedbackParameter;
                 mFeedbackRight = delaySampleRight * *mFeedbackParameter;
@@ -275,8 +279,8 @@ void AntagonizerAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, 
                     mCircularBufferWriteHead = 0;
                 }
                 
-                float dryAmount = 1 - *mDryWetParameter;
                 float wetAmount = *mDryWetParameter;
+                float dryAmount = 1 - wetAmount;
                 
                 buffer.setSample(0, i, buffer.getSample(0, i) * dryAmount + delaySampleLeft * wetAmount);
                 buffer.setSample(1, i, buffer.getSample(1, i) * dryAmount + delaySampleRight * wetAmount);
