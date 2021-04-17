@@ -24,7 +24,7 @@ AntagonizerAudioProcessor::AntagonizerAudioProcessor()
     
     addParameter(mPhaseOffsetParameter = new AudioParameterFloat("phaseoffset", "Phase Offset", 0.f, 1.f, 0.f));
     
-    addParameter(mTypeParameter = new AudioParameterInt("type", "Type", 0, 1, 0));
+    addParameter(mTypeParameter = new AudioParameterInt("type", "Type", 0, 3, 0));
      
      
      
@@ -217,6 +217,16 @@ void AntagonizerAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, 
                 {
                     lfoOutMappedLeft = jmap(lfoOutLeft, -1.f, 1.f, 0.001f, 0.005f);
                     lfoOutMappedRight = jmap(lfoOutRight, -1.f, 1.f, 0.001f, 0.005f);
+                }
+                else if (*mTypeParameter == 2)
+                {
+                    lfoOutMappedLeft = jmap(lfoOutLeft, -1.f, 1.f, 0.03f, 0.1f);
+                    lfoOutMappedRight = jmap(lfoOutRight, -1.f, 1.f, 0.03f, 0.1f);
+                }
+                else if (*mTypeParameter == 3)
+                {
+                    lfoOutMappedLeft = jmap(lfoOutLeft, -1.f, 1.f, 0.1f, 1.f);
+                    lfoOutMappedRight = jmap(lfoOutRight, -1.f, 1.f, 0.1f, 1.f);
                 }
                 
                 float delayTimeSamplesLeft = getSampleRate() * lfoOutMappedLeft;
